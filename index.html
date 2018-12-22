@@ -4,16 +4,69 @@
   <head>
     <title>Test heatmap</title>
     <link rel="stylesheet" type="text/css" href="style/style.css">
+    <!--pie chart-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+
+    <!--donut-->
+    <script type="text/javascript">
+      google.charts.load("current", {
+        packages: ["corechart"]
+      });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Colour', 'Percentage'],
+          ['Grey', 35.16],
+          ['White', 11.90],
+          ['Denim Navy', 8.97],
+          ['Denim Baby Blue', 3.63],
+          ['Denim Teal', 7.83],
+          ['Baby Blue', 9.68],
+          ['Teal', 11.38],
+          ['Navy', 11.46]
+        ]);
+
+        var options = {
+          pieHole: 0.4,
+          legend: {
+            position: 'labeled',
+            textStyle: {
+              fontSize: 10
+            }
+          },
+          colors: ['#d3d3d3', '#f3f3f3', '#191970',
+            '#008B8B',
+            '#b0e0e6',
+            '#add8e6',
+            '#20b2aa',
+            '#483d8b'
+          ],
+          pieStartAngle: 100,
+          pieSliceText: 'none'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
   </head>
 
   <body>
-    <h1>Heatmap of Time Spent Per Day</h1>
+    <h1><a href="https://github.com/g1eb/calendar-heatmap">Heatmap of Time Spent Per Day</a></h1>
+
     <div id="calendar"></div>
 
+    <!--calendar-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.10.2/d3.min.js" charset="utf-8"></script>
     <script src="js/calendar-heatmap.js"></script>
 
+
+
+    <!--calendar-->
     <script>
       (function() {
         // Initialize random data for the demo
@@ -448,9 +501,14 @@
         calendarHeatmap.init(data, div_id, color, overview, print);
       })();
     </script>
-
     <p></p>
-    <p>Ignore the unstyled font pls</p>
+
+    <!--donut-->
+    <h1>Colours Used</h1>
+    <div id="donutchart" style="width: 1000px; height: 500px;"></div>
+
+
+
 
   </body>
 
