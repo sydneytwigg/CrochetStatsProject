@@ -48,7 +48,43 @@
           pieSliceText: 'none'
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        var chart = new google.visualization.PieChart(document.getElementById('colours_donut'));
+        chart.draw(data, options);
+      }
+    </script>
+
+    <!--donut-->
+    <script type="text/javascript">
+      google.charts.load("current", {
+        packages: ["corechart"]
+      });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Material', 'Percentage'],
+          ['Recycled Cotton', 47.1],
+          ['Cotton', 21.1],
+          ['Organic Cotton', 11.5],
+          ['Recycled Denim', 20.4]
+        ]);
+
+        var options = {
+          pieHole: 0.4,
+          legend: {
+            position: 'labeled',
+            textStyle: {
+              fontSize: 10
+            }
+          },
+          colors: ['#d3d3d3', '#191970', '#483d8b',
+            '#008B8B'
+          ],
+          pieStartAngle: 100,
+          pieSliceText: 'none'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('materials_donut'));
         chart.draw(data, options);
       }
     </script>
@@ -505,7 +541,11 @@
 
     <!--donut-->
     <h1>Colours Used</h1>
-    <div id="donutchart" style="width: 1000px; height: 500px;"></div>
+    <div id="colours_donut" style="width: 1000px; height: 500px;"></div>
+
+    <!--donut2-->
+    <h1>Material Breakdown</h1>
+    <div id="materials_donut" style="width: 1000px; height: 500px;"></div>
 
 
 
