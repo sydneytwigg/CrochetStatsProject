@@ -1,0 +1,24 @@
+{
+  "name": "crochetstatsproject",
+  "version": "1.0.0",
+  "description": "A data visualisation of a crochet blanket",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sydneytwigg/CrochetStatsProject.git"
+  },
+  "author": "Sydney Twigg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sydneytwigg/CrochetStatsProject/issues"
+  },
+  "homepage": "https://github.com/sydneytwigg/CrochetStatsProject#readme",
+  "dependencies": {
+    "chart.heatmap.js": "0.0.1-alpha",
+    "chart.js": "^2.7.3",
+    "d3": "^5.7.0"
+  }
+}

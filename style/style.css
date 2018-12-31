@@ -53,3 +53,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+body {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+  margin: 40px;
+}
